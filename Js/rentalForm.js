@@ -19,8 +19,6 @@ function submitRentalDetails() {
       if (response.status === 'success') {
         $('#responseMessage').css('color', 'green').html('Rental details submitted successfully.');
         $('#rentalForm')[0].reset();
-      } else if (response.status === 'exists') {
-        $('#responseMessage').css('color', 'orange').html('Rental details for this R Number already exist.');
       } else {
         $('#responseMessage').css('color', 'red').html('Error submitting rental details. Please try again.');
       }
