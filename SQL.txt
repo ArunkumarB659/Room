@@ -1,0 +1,15 @@
+CREATE DATABASE rental_db;
+USE rental_db;
+
+CREATE TABLE rental_details (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  room_number VARCHAR(50) NOT NULL,
+  tenant_name VARCHAR(100) NOT NULL,
+  rent_amount DECIMAL(10,2) NOT NULL,
+  month VARCHAR(20) NOT NULL,
+  eb_bill DECIMAL(10,2),
+  water_front_1 DECIMAL(10,2),
+  water_back_1 DECIMAL(10,2),
+  notes TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
