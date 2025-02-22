@@ -1,15 +1,16 @@
-CREATE DATABASE rental_db;
-USE rental_db;
+-- Create the database
+CREATE DATABASE IF NOT EXISTS Building_Maintenance;
 
-CREATE TABLE rental_details (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  room_number VARCHAR(50) NOT NULL,
-  tenant_name VARCHAR(100) NOT NULL,
-  rent_amount DECIMAL(10,2) NOT NULL,
-  month VARCHAR(20) NOT NULL,
-  eb_bill DECIMAL(10,2),
-  water_front_1 DECIMAL(10,2),
-  water_back_1 DECIMAL(10,2),
-  notes TEXT,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- Use the created database
+USE Building_Maintenance;
+
+-- Create the Tenant_details table
+CREATE TABLE IF NOT EXISTS Tenant_details (
+    Tenant_id INT PRIMARY KEY AUTO_INCREMENT, -- Primary key for unique tenant identification
+    Tenant_name VARCHAR(100) NOT NULL,
+    Room_number INT NOT NULL UNIQUE,
+    Mobile_number VARCHAR(15) NOT NULL,
+    Permanent_address TEXT NOT NULL,
+    Local_address TEXT NOT NULL,
+    Aadhaar_number VARCHAR(12) NOT NULL UNIQUE
 );
