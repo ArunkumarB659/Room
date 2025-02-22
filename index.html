@@ -20,39 +20,31 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card p-4">
-          <h2 class="text-center mb-4">Rental Details Form</h2>
-          <form id="rentalForm" onsubmit="return submitRentalDetails();">
+          <h2 class="text-center mb-4">Tenant Details Form</h2>
+          <form id="Tenant_details_form" onsubmit="return AddTenant_details();">
             <div class="mb-3">
-              <label for="rNumber" class="form-label">R Number</label>
-              <input type="text" class="form-control" id="rNumber" name="rNumber" required>
+              <label for="Tenant_name" class="form-label">Tenant Name</label>
+              <input type="text" class="form-control" id="Tenant_name" name="Tenant_name" required>
             </div>
             <div class="mb-3">
-              <label for="tName" class="form-label">Tenant Name</label>
-              <input type="text" class="form-control" id="tName" name="tName" required>
+              <label for="Room_number" class="form-label">Room Number</label>
+              <input type="number" class="form-control" id="Room_number" name="Room_number" required>
             </div>
             <div class="mb-3">
-              <label for="amount" class="form-label">Amount</label>
-              <input type="number" class="form-control" id="amount" name="amount" required>
+              <label for="Mobile_number" class="form-label">Mobile Number</label>
+              <input type="number" class="form-control" id="Mobile_number" name="Mobile_number" required>
             </div>
             <div class="mb-3">
-              <label for="month" class="form-label">Month</label>
-              <input type="month" class="form-control" id="month" name="month" required>
+              <label for="Permanent_address" class="form-label">Permanent Address</label>
+              <input type="text" class="form-control" id="Permanent_address" name="Permanent_address">
             </div>
             <div class="mb-3">
-              <label for="ebBill" class="form-label">EB Bill</label>
-              <input type="number" class="form-control" id="ebBill" name="ebBill">
+              <label for="Local_address" class="form-label">Local Address</label>
+              <input type="text" class="form-control" id="Local_address" name="Local_address">
             </div>
             <div class="mb-3">
-              <label for="waterFront1" class="form-label">Water Front 1</label>
-              <input type="number" class="form-control" id="waterFront1" name="waterFront1">
-            </div>
-            <div class="mb-3">
-              <label for="waterBack1" class="form-label">Water Back 1</label>
-              <input type="number" class="form-control" id="waterBack1" name="waterBack1">
-            </div>
-            <div class="mb-3">
-              <label for="notes" class="form-label">Notes</label>
-              <textarea class="form-control" id="notes" name="notes" rows="3"></textarea>
+              <label for="Aadhaar_number" class="form-label">Aadhaar Number</label>
+              <input type="number" class="form-control" id="Aadhaar_number" name="Aadhaar_number">
             </div>
             <button type="submit" class="btn btn-primary w-100">Submit</button>
             <div id="responseMessage" class="text-center"></div>
