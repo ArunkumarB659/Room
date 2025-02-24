@@ -1,11 +1,11 @@
-function submitRentalDetails() {
+function AddTenant_details() {
   $("#responseMessage").html(''); // Clear previous messages
 
   // Serialize form data
-  var formData = $('#rentalForm').serialize();
+  var formData = $('#Tenant_details_form').serialize();
 
   // Basic validation (can be extended as needed)
-  if (!$('#rNumber').val().trim() || !$('#tName').val().trim() || !$('#amount').val().trim() || !$('#month').val()) {
+  if (!$('#Tenant_name').val().trim() || !$('#Room_number').val().trim() || !$('#Mobile_number').val().trim() || !$('#Permanent_address').val() || !$('#Local_address').val() || !$('#Aadhaar_number').val()) {
     alert('Please fill all required fields.');
     return false;
   }
@@ -13,12 +13,12 @@ function submitRentalDetails() {
   $.ajax({
     type: "POST",
     url: "ajax/ajaxcall.php",
-    data: formData + "&action=submitRentalDetails",
+    data: formData + "&action=submitTenantDetails",
     dataType: "json",
     success: function(response) {
       if (response.status === 'success') {
-        $('#responseMessage').css('color', 'green').html('Rental details submitted successfully.');
-        $('#rentalForm')[0].reset();
+        $('#responseMessage').css('color', 'green').html('Tenant details submitted successfully.');
+        $('#Tenant_details_form')[0].reset();
       } else {
         $('#responseMessage').css('color', 'red').html('Error submitting rental details. Please try again.');
       }
