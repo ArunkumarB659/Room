@@ -20,7 +20,7 @@ function AddTenant_details() {
         $('#responseMessage').css('color', 'green').html('Tenant details submitted successfully.');
         $('#Tenant_details_form')[0].reset();
       } else {
-        $('#responseMessage').css('color', 'red').html('Error submitting rental details. Please try again.');
+        $('#responseMessage').css('color', 'red').html('Error submitting Tenant details. Please try again.');
       }
     },
     error: function() {
