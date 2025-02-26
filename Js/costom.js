@@ -1,5 +1,5 @@
 function AddTenant_details() {
-  $("#responseMessage").html(''); // Clear previous messages
+  $("#Tenant_Details_responseMessage").html(''); // Clear previous messages
 
   // Serialize form data
   var formData = $('#Tenant_details_form').serialize();
@@ -17,14 +17,14 @@ function AddTenant_details() {
     dataType: "json",
     success: function(response) {
       if (response.status === 'success') {
-        $('#responseMessage').css('color', 'green').html('Tenant details submitted successfully.');
+        $('#Tenant_Details_responseMessage').css('color', 'green').html('Tenant details submitted successfully.');
         $('#Tenant_details_form')[0].reset();
       } else {
-        $('#responseMessage').css('color', 'red').html('Error submitting Tenant details. Please try again.');
+        $('#Tenant_Details_responseMessage').css('color', 'red').html('Error submitting Tenant details. Please try again.');
       }
     },
     error: function() {
-      $('#responseMessage').css('color', 'red').html('An unexpected error occurred.');
+      $('#Tenant_Details_responseMessage').css('color', 'red').html('An unexpected error occurred.');
     }
   });
 
