@@ -57,34 +57,39 @@
       <div class="col-md-8">
         <div class="card p-4">
           <h2 class="text-center mb-4">Enter Rent Details</h2>
-			<form id="Rent_details_form" onsubmit="return AddRentDetails()";>
+			<form id="Rent_details_form" onsubmit="return AddRentDetails();">
 			<div class="mb-3">
           <label for="month_year" class="form-label">Select Month and Year</label>
           <input type="month" id="month_year" name="month_year" class="form-control" required />
         </div>
 				<div class="mb-3">
 					<label for="rent_room_number" class="form-label">Select Room No</label>
-					<input type="number" id="rent_room_number" name="room_number" class="form-control" min="1" placeholder="Enter room number" required/>
+					<input type="number" id="rent_room_number" name="rent_room_number" class="form-control" min="1" placeholder="Enter room number" required/>
 				</div>
 				<div class="row">
-									<div class="col-md-6 mb-3">
-										<label for="water_front" class="form-label">Enter Water Reading Front</label>
-										<input type="number" id="water_front" name="water_front" class="form-control" min="0" placeholder="Front water reading" required/>
-									</div>
-									<div class="col-md-6 mb-3">
-										<label for="water_back" class="form-label">Enter Water Reading Back</label>
-										<input type="number" id="water_back" name="water_back" class="form-control" min="0" placeholder="Back water reading" required/>
-									</div>
-								</div>
-				<div class="mb-3">
-									<label for="eb_bill" class="form-label">EB Bill</label>
-									<input type="number" id="eb_bill" name="eb_bill" class="form-control" min="0" placeholder="Enter EB bill amount" required/>
-								</div>
-				<div class="mb-3">
-									<label for="maintenance" class="form-label">Maintenance Amount</label>
-									<input type="number" id="maintenance" name="maintenance" class="form-control" min="0" step="50" placeholder="Enter maintenance amount" required/>
+					<div class="col-md-6 mb-3">
+						<label for="water_front" class="form-label">Enter Water Reading Front</label>
+						<input type="number" id="water_front" name="water_front" class="form-control" min="0" placeholder="Front water reading" required/>
+					</div>
+					<div class="col-md-6 mb-3">
+						<label for="water_back" class="form-label">Enter Water Reading Back</label>
+						<input type="number" id="water_back" name="water_back" class="form-control" min="0" placeholder="Back water reading" required/>
+					</div>
 				</div>
+				<div class="mb-3">
+					<label for="eb_bill" class="form-label">EB Bill</label>
+					<input type="number" id="eb_bill" name="eb_bill" class="form-control" min="0" placeholder="Enter EB bill amount" required/>
+				</div>
+				<div class="mb-3">
+					<label for="maintenance" class="form-label">Maintenance Amount</label>
+					<input type="number" id="maintenance" name="maintenance" class="form-control" min="0" step="50" placeholder="Enter maintenance amount" required/>
+				</div>
+				<div class="mb-3">
+              <label for="Notes" class="form-label">Notes</label>
+              <input type="text" class="form-control" id="Notes" name="Notes">
+            </div>
 				<button type="submit" class="btn btn-primary w-100">Submit Rent Details</button>
+				<div id="Rent_Details_responseMessage" class="text-center"></div>
 			</form>
 	    </div>
       </div>
