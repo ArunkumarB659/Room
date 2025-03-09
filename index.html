@@ -25,7 +25,8 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#" id="showTenantForm">Tenant Form</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" id="showRentForm">Rent Details</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" id="showRentForm">Rent Form</a></li>
+		  <li class="nav-item"><a class="nav-link" href="#" id="ShowRentDetails" onclick="GetRentDetails()">Rent Details</a></li>
         </ul>
       </div>
     </div>
@@ -111,14 +112,43 @@
       </div>
     </div>
  </div>
+<div class="container mt-4 form-container" id="RentContainer">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card p-4">
+                <h2 class="text-center mb-4">Rent Details</h2>
+                <table class="table table-bordered">
+				<thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Month/Year</th>
+                            <th>Room No</th>
+                            <th>Water Front</th>
+                            <th>Water Back</th>
+                            <th>EB Bill</th>
+                            <th>Maintenance</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rentTableBody">
+                        <!-- Data will be loaded here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
 </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
   <script>
+
     $(document).ready(function() {
 	 $(".form-container").hide();
       const forms = {
         showTenantForm: "#TenantForm",
-        showRentForm: "#RentForm"
+        showRentForm: "#RentForm",
+		ShowRentDetails: "#RentContainer"
       };
 
       $(".nav-link").click(function() {

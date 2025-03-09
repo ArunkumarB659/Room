@@ -73,3 +73,40 @@ function AddRentDetails() {
 
   return false;
 }
+
+function GetRentDetails() {
+    $.ajax({
+        type: "POST",
+        data: { action: "GetRentDetails" }, // Send as an object
+        url: "ajax/ajaxcall.php",
+        dataType: "json", // Expect JSON response
+        success: function(response) {
+            if (Array.isArray(response)) {
+                let tableRows = '';
+                response.forEach(row => {
+                    tableRows += `<tr>
+                        <td>${row.id}</td>
+                        <td>${row.month_year}</td>
+                        <td>${row.room_number}</td>
+                        <td>${row.water_front}</td>
+                        <td>${row.water_back}</td>
+                        <td>${row.eb_bill}</td>
+                        <td>${row.maintenance}</td>
+                        <td>${row.Notes}</td>
+                    </tr>`;
+                });
+                $('#rentTableBody').html(tableRows); // Insert table rows
+            } else {
+                console.error("Invalid data format:", response);
+                $('#rentTableBody').html('<tr><td colspan="8">Error loading data</td></tr>');
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error("AJAX Error:", error);
+            $('#rentTableBody').html('<tr><td colspan="8">Failed to fetch data</td></tr>');
+        }
+    });
+}
+
+  
+  
