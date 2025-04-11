@@ -16,16 +16,16 @@ function AddTenant_details() {
     data: formData + "&action=submitTenantDetails",
     dataType: "json",
     success: function(response) {
-      if (response.status === 'success') {
+		console.log("AJAX Response:", response);
+      if (response.status == 'success') 
+	  {
         $('#Tenant_Details_responseMessage').css('color', 'green').html('Tenant details submitted successfully.');
         $('#Tenant_details_form')[0].reset();
       } else {
         $('#Tenant_Details_responseMessage').css('color', 'red').html('Error submitting Tenant details. Please try again.');
       }
     },
-    error: function() {
-      $('#Tenant_Details_responseMessage').css('color', 'red').html('An unexpected error occurred.');
-    }
+
   });
 
   return false;
@@ -53,7 +53,9 @@ function AddRentDetails() {
     data: formData + "&action=SubmitAddrentDetails",
     dataType: "json",
     success: function(response) {
-      if (response.status === 'success') {
+		
+      if (response.status == 'success') {
+		  alert('Product added successfully');
         $('#Rent_Details_responseMessage')
           .css('color', 'green')
           .html('Rent details submitted successfully.');
@@ -85,14 +87,16 @@ function GetRentDetails() {
                 let tableRows = '';
                 response.forEach(row => {
                     tableRows += `<tr>
-                        <td>${row.id}</td>
+						<td>${row.id}</td>
+						<td>${row.room_number}</td>
                         <td>${row.month_year}</td>
-                        <td>${row.room_number}</td>
                         <td>${row.water_front}</td>
                         <td>${row.water_back}</td>
                         <td>${row.eb_bill}</td>
                         <td>${row.maintenance}</td>
                         <td>${row.Notes}</td>
+                        <td>${row.water_bill}</td>
+						<td><button>eb_bill</button></td>
                     </tr>`;
                 });
                 $('#rentTableBody').html(tableRows); // Insert table rows

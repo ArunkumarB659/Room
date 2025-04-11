@@ -69,7 +69,7 @@ function GetRentDetails()
 {
 	global $con;
 		$output = array();
-		$query = "SELECT id, month_year, room_number, water_front, water_back, eb_bill, maintenance, Notes FROM rent_details WHERE month_year = DATE_FORMAT(CURDATE(), '%Y-%m') ORDER BY room_number ";
+		$query = "SELECT month_year, room_number, water_front, water_back, eb_bill, maintenance, Notes, water_bill FROM rent_details WHERE month_year = DATE_FORMAT(CURDATE(), '%Y-%m') ORDER BY room_number ";
 		$result = mysqli_query($con, $query);
 		while( $row = mysqli_fetch_array($result) ) {
 			$output[] = $row;
